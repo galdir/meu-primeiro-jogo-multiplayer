@@ -48,6 +48,7 @@ io.on('connection', function(socket){
   })
 
   socket.on('player-move', (direction) => {
+    console.log(direction)
     game.movePlayer(socket.id, direction)
 
     const fruitColisionIds = game.checkForFruitColision()
