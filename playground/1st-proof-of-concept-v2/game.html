@@ -353,32 +353,16 @@
             function handleTouch(evt) {
                 if (connected) {
                     evt.preventDefault();
-                    //var el = document.getElementsByTagName("canvas")[0];
-                    //var ctx = el.getContext("2d");
+
                     var touches = evt.changedTouches;   
 
-                    
-                    //console.log('tamanho tela jogo '+(game.canvasHeight))
-                    //console.log('tamanho tela jogo '+(game.canvasWidth * 18))
                     const player = game.players[socket.id]
-                    //tes
-                    //const context = gameCanvas.getContext('2d')
+
                     var gameRect = gameCanvas.getBoundingClientRect();
-                    //console.log(context.position().left)
-                    //console.log(gameRect.left)
-                    //console.log('toque x '+ touches[0].pageX)
-                    //console.log('inicio rect game '+ gameRect.left)
-                    //console.log('fim rect game '+ gameRect.right)
-                    //console.log('tamanho canvas '+ game.canvasWidth)
 
                     var toqueX=(touches[0].pageX-gameRect.left)/(gameRect.width/game.canvasWidth)
                     var toqueY=(touches[0].pageY-gameRect.top)/(gameRect.height/game.canvasHeight)
-                    //var toqueX=(touches[0].pageX)/(game.canvasWidth)
-                    //var toqueY=(touches[0].pageY)/(game.canvasHeight)
-                    //var toqueY=touches[0].pageY/(game.canvasHeight)
-                    console.log('pos jog x: ' + player.x +' toque ' + toqueX)
-                    //console.log('pos jog y: ' + player.y +' toque ' + toqueY)
-                    
+                    console.log('pos jog x: ' + player.x +' toque ' + toqueX)                  
 
                     if(toqueX < player.x){
                          player.x = player.x - 1
